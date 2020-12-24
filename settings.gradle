@@ -1,0 +1,3 @@
+rootProject.name = "MultiModuleApp-Playground"
+include ':app'
+include ':core'
