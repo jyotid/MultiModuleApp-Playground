@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.library'
     id 'kotlin-android'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -26,16 +27,26 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-    kotlinOptions {
-        jvmTarget = '1.8'
-    }
 }
 
 dependencies {
-    implementation Dependencies.Rx
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation Dependencies.Material
     implementation Retrofit.Lib
     implementation Retrofit.Converter
     implementation Retrofit.Adapter
+    implementation Kotlin.STDLib
+    implementation AndroidX.AppCompat
+    implementation AndroidX.ConstraintLayout
+
+    // Dagger
     implementation Dagger.Lib
-    annotationProcessor Dagger.AnnotationProcessor
+    implementation Dagger.DaggerAndroid
+    implementation Dagger.AndroidSupport
+
+    kapt Dagger.AnnotationProcessor
+    kapt Dagger.DaggerAndroidAnnotationProcessor
+
+    compileOnly 'com.github.pengrad:jdk9-deps:1.0'
+
 }

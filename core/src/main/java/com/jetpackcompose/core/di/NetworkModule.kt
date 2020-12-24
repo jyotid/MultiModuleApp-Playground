@@ -36,6 +36,7 @@ class NetworkModule {
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .client(okHttpClient)
             .addConverterFactory(MoshiConverterFactory.create())
+            .baseUrl("https://hotels4.p.rapidapi.com/")
             .build()
     }
 

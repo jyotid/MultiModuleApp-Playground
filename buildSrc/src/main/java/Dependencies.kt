@@ -6,7 +6,7 @@ object Version {
     val VersionName = "1.0"
     val Kotlin = "1.4.10"
     val Retrofit = "2.6.2"
-    val Dagger = "2.16"
+    val Dagger = "2.21"
 }
 
 object Dependencies {
@@ -32,6 +32,10 @@ object Retrofit {
 object Dagger{
     val Lib = "com.google.dagger:dagger:${Version.Dagger}"
     val AnnotationProcessor = "com.google.dagger:dagger-compiler:${Version.Dagger}"
+    val AndroidSupport = "com.google.dagger:dagger-android-support:${Version.Dagger}"
+    val DaggerAndroid = "com.google.dagger:dagger-android:${Version.Dagger}"
+    val DaggerAndroidAnnotationProcessor = "com.google.dagger:dagger-android-processor:${Version.Dagger}"
+
 }
 
 

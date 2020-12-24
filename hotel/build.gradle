@@ -1,21 +1,20 @@
 plugins {
-    id 'com.android.application'
-    id 'org.jetbrains.kotlin.android'
+    id 'com.android.library'
+    id 'kotlin-android'
     id 'kotlin-kapt'
-    id 'kotlin-android-extensions'
 }
 
 android {
-    compileSdkVersion Version.CompileSDK
+    compileSdkVersion 30
 
     defaultConfig {
-        applicationId "com.jetpackcompose.multimoduleapp_playground"
-        minSdkVersion Version.MinSDK
-        targetSdkVersion Version.TargetSDK
-        versionCode Version.VersionCode
-        versionName Version.VersionName
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
@@ -24,12 +23,14 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
     implementation project(Modules.core)
-    implementation project(Modules.hotel)
     implementation Dependencies.Material
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation Retrofit.Lib
@@ -43,10 +44,11 @@ dependencies {
     implementation Dagger.Lib
     implementation Dagger.DaggerAndroid
     implementation Dagger.AndroidSupport
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
     kapt Dagger.AnnotationProcessor
     kapt Dagger.DaggerAndroidAnnotationProcessor
 
     compileOnly 'com.github.pengrad:jdk9-deps:1.0'
-
 }
