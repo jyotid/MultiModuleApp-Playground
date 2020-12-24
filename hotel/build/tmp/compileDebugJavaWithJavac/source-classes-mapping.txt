@@ -1,0 +1,8 @@
+com/jetpackcompose/hotel/BuildConfig.java
+ com.jetpackcompose.hotel.BuildConfig
+com/jetpackcompose/hotel/ui/HotelFragment_MembersInjector.java
+ com.jetpackcompose.hotel.ui.HotelFragment_MembersInjector
+com/jetpackcompose/hotel/di/DaggerHotelComponent.java
+ com.jetpackcompose.hotel.di.DaggerHotelComponent
+ com.jetpackcompose.hotel.di.DaggerHotelComponent$1
+ com.jetpackcompose.hotel.di.DaggerHotelComponent$Builder
