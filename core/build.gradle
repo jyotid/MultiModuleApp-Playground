@@ -36,4 +36,6 @@ dependencies {
     implementation Retrofit.Lib
     implementation Retrofit.Converter
     implementation Retrofit.Adapter
+    implementation Dagger.Lib
+    annotationProcessor Dagger.AnnotationProcessor
 }

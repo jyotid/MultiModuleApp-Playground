@@ -6,12 +6,12 @@ object Version {
     val VersionName = "1.0"
     val Kotlin = "1.4.10"
     val Retrofit = "2.6.2"
+    val Dagger = "2.16"
 }
 
 object Dependencies {
     val Rx = "io.reactivex.rxjava3:rxjava:3.0.0"
     val Material = "com.google.android.material:material:1.2.1"
-
 }
 
 object AndroidX {
@@ -28,6 +28,10 @@ object Retrofit {
     val Lib = "com.squareup.retrofit2:retrofit:${Version.Retrofit}"
     val Converter = "com.squareup.retrofit2:converter-moshi:${Version.Retrofit}"
     val Adapter = "com.squareup.retrofit2:adapter-rxjava2:${Version.Retrofit}"
+}
+object Dagger{
+    val Lib = "com.google.dagger:dagger:${Version.Dagger}"
+    val AnnotationProcessor = "com.google.dagger:dagger-compiler:${Version.Dagger}"
 }
 
 
