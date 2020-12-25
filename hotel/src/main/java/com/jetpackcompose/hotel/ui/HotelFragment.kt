@@ -6,11 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.jetpackcompose.core.HotelService
-import com.jetpackcompose.core.di.CoreComponent
 import com.jetpackcompose.core.di.CoreInjectHelper
 import com.jetpackcompose.hotel.R
 import com.jetpackcompose.hotel.di.DaggerHotelComponent
 import com.jetpackcompose.hotel.di.HotelComponent
+import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
 class HotelFragment : Fragment() {
@@ -27,6 +27,13 @@ class HotelFragment : Fragment() {
             .coreComponent(CoreInjectHelper.provideCoreComponent(context!!.applicationContext))
             .build()
         component.inject(this)
+        service.getHotelsAtLocation("newyork","en_US")
+            .subscribeOn(Schedulers.io())
+            .subscribe ({
+                System.out.println("fgb")
+            },{
+                System.out.println("err")
+            })
         return inflater.inflate(R.layout.fragment_hotel, container, false)
     }
 

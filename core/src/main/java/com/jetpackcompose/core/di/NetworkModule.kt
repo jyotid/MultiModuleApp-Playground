@@ -15,12 +15,13 @@ class NetworkModule {
     @Provides
     @Singleton
     fun provideOkHttpClient(): OkHttpClient {
+        //2760bddcedmsh2ef8f43982eb2bap172676jsnc7855256d212
         return OkHttpClient.Builder()
             .addInterceptor {
                 val currentRequest = it.request().newBuilder()
                 currentRequest.addHeader(
                     "x-rapidapi-key",
-                    ""
+                    "7bd66e69ecmshbb40440cd55894dp1530a9jsnd03993cf03b0"
                 )
                 currentRequest.addHeader("x-rapidapi-host", "hotels4.p.rapidapi.com")
                 currentRequest.addHeader("useQueryString", "true")

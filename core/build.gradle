@@ -22,6 +22,9 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+        buildTypes.each{
+            it.buildConfigField 'String', 'HotelAPIKey', HotelAPIKey
+        }
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -38,6 +41,9 @@ dependencies {
     implementation Kotlin.STDLib
     implementation AndroidX.AppCompat
     implementation AndroidX.ConstraintLayout
+
+    //Rx
+    implementation Dependencies.Rx
 
     // Dagger
     implementation Dagger.Lib

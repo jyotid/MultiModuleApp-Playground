@@ -40,6 +40,9 @@ dependencies {
     implementation AndroidX.AppCompat
     implementation AndroidX.ConstraintLayout
 
+    //Rx
+    implementation Dependencies.Rx
+
     // Dagger
     implementation Dagger.Lib
     implementation Dagger.DaggerAndroid

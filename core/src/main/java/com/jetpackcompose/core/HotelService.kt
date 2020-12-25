@@ -1,6 +1,7 @@
 package com.jetpackcompose.core
 
-import com.jetpackcompose.core.model.Hotel
+import com.jetpackcompose.core.model.Suggestions
+import io.reactivex.Single
 import retrofit2.http.GET
 import retrofit2.http.Query
 
@@ -9,5 +10,5 @@ interface HotelService {
     fun getHotelsAtLocation(
         @Query("query") city : String,
         @Query("locale") local: String
-    ): List<Hotel>
+    ): Single<Suggestions>
 }

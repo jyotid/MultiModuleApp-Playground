@@ -28,16 +28,19 @@ android {
 }
 
 dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(Modules.core)
     implementation project(Modules.hotel)
     implementation Dependencies.Material
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation Retrofit.Lib
     implementation Retrofit.Converter
     implementation Retrofit.Adapter
     implementation Kotlin.STDLib
     implementation AndroidX.AppCompat
     implementation AndroidX.ConstraintLayout
+
+    //Rx
+    implementation Dependencies.Rx
 
     // Dagger
     implementation Dagger.Lib
